@@ -157,14 +157,15 @@ function App() {
         first={(currentPage - 1) * 12}
         paginatorTemplate={`FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport`}
         currentPageReportTemplate={`Showing ${(currentPage - 1) * 12 + 1} to ${Math.min(currentPage * 12, totalRecords)} of ${totalRecords.toLocaleString()} entries`}
+        style={{ width: '100%' }}
       >
         <Column selectionMode="multiple" headerStyle={{ width: '3rem' }} />
         <Column field="title" header="Title" sortable />
         <Column field="place_of_origin" header="Place of Origin" sortable />
         <Column field="artist_display" header="Artist Display" sortable />
         <Column field="inscriptions" header="Inscriptions" sortable />
-        <Column field="date_start" header="Date Start" sortable />
-        <Column field="date_end" header="Date End" sortable />
+        <Column field="date_start" header="Date Start" sortable style={{ minWidth: '120px' }} />
+        <Column field="date_end" header="Date End" sortable style={{ minWidth: '120px' }} />
       </DataTable>
     </div>
   );
